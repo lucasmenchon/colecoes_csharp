@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using static System.Console;
 
-namespace Queue
+namespace Colecoes
 {
     internal class Program
     {
-        // ************* LINQ *************** //
         static void Main(string[] args)
         {
-            int[] arrayNum = new int[6] {1,3,5, 6, 8, 10};
+            // ************* LINQ *************** //
+
+            int[] arrayNum = new int[6] { 1, 3, 5, 6, 8, 10 };
             var numPar =
                 from num in arrayNum
                 where num % 2 == 0
                 orderby num
                 select num;
 
-            var numParMetodo = arrayNum.Where(x=> x % 2 == 0).OrderBy(x=>x).ToList();
+            var numParMetodo = arrayNum.Where(x => x % 2 == 0).OrderBy(x => x).ToList();
             WriteLine("Pares Query:" + string.Join(", ", numPar));
             WriteLine("Pares Metodo:" + string.Join(", ", numParMetodo));
 
-            
+
 
             ////dicionario
             //Dictionary<string, string> estados = new Dictionary<string, string>();
@@ -71,7 +72,6 @@ namespace Queue
             //}
 
             //WriteLine($"Pessoas na fila: {fila.Count}");
-
         }
     }
 }
